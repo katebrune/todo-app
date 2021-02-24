@@ -1,0 +1,8 @@
+schema: http://localhost:3000/graphql
+documents: ['./src/ui/components/**/*.data.ts', './src/ui/queries/*.data.ts']
+generates:
+  ./src/ui/typedDocumentNodes.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typed-document-node

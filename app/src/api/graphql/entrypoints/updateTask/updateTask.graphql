@@ -1,0 +1,6 @@
+type Mutation {
+  """
+  mutation to update a task entity
+  """
+  updateTask(id: Int!, name: String, description: String, status: String): Task
+}

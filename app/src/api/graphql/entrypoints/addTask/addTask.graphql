@@ -1,0 +1,6 @@
+type Mutation {
+  """
+  mutation to add a new task
+  """
+  addTask(name: String!, description: String!): Task
+}

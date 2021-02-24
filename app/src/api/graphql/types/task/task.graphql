@@ -1,0 +1,24 @@
+"""
+entity representing a task
+"""
+type Task {
+  """
+  task id
+  """
+  id: Int!
+
+  """
+  the name of the task
+  """
+  name: String!
+
+  """
+  a description of the task
+  """
+  description: String!
+
+  """
+  the status of the task (TODO, IN_PROGRESS, COMPLETE)
+  """
+  status: String!
+}

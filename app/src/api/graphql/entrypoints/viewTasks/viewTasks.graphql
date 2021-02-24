@@ -1,0 +1,6 @@
+type Query {
+  """
+  query that returns all tasks
+  """
+  viewTasks(status: String): [Task]
+}
