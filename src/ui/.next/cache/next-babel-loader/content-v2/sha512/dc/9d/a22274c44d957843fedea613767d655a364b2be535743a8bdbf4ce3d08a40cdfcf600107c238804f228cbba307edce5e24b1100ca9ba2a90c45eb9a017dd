@@ -1,0 +1,1 @@
+{"ast":null,"code":"export { Flex } from './Flex/flex';","map":{"version":3,"sources":["/Users/kbrune/Documents/learning/nestjs-nextjs/app/src/ui/primitives/index.ts"],"names":["Flex"],"mappings":"AAAA,SAASA,IAAT,QAAqB,aAArB","sourcesContent":["export { Flex } from './Flex/flex';\n"]},"metadata":{},"sourceType":"module"}
