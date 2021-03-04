@@ -15,10 +15,10 @@ export class PostgresService {
       password: this.configService.get('postgresPassword'),
       database: this.configService.get('postgresDatabase'),
       entities: ['dist/database/entities/*.entity.js'],
-      migrationsTableName: 'migration',
-      migrations: ['dist/database/migration/*.js'],
+      migrationsTableName: 'migrations',
+      migrations: ['dist/database/migrations/*.js'],
       cli: {
-        migrationsDir: 'src/database/migration',
+        migrationsDir: 'src/database/migrations',
       },
     };
   }

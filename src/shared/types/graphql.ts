@@ -8,6 +8,7 @@
 /* eslint-disable */
 export interface IMutation {
     addTask(name: string, description: string): Task | Promise<Task>;
+    startSession(): string | Promise<string>;
     updateTask(id: number, name?: string, description?: string, status?: string): Task | Promise<Task>;
 }
 
