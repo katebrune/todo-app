@@ -58,13 +58,20 @@ cp .env.example .env
 docker-compose up
 ```
 
-5. Run migrations
+5. Generate ormconfig
+
+```bash
+#/todo-app
+jake db:config:generate
+```
+
+6. Run migrations
 
 ```bash
 jake db:migration:run
 ```
 
-6. Start application
+7. Start application
 
 ```bash
 #/todo-app
