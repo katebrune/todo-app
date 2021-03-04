@@ -8,26 +8,7 @@ This project started as a proof-of-concept for server-side rendering [NextJS](ht
 
 ## Roadmap
 
-- [x] get basic setup in place
-- [x] fetch data from rest endpoint
-- [x] add graphql to nest
-- [x] add jake, add jake task to generate graphql types
-- [x] add graphql to next & fetch data
-- [ ] define apollo client once, instead of inside every page
-- [x] send mutations/queries from ui to api
-- [x] use graphql fragments
-- [x] add database (docker-compose, postgresql)
-- [x] connect nest + db (typeorm)
-- [ ] add docker
-- [x] add storybook
-- [x] add ui styles (styled-components)
-- [ ] add ui unit testing
-- [ ] add api unit testing
-- [ ] add ui integration testing
-- [ ] add api integration testing
-- [ ] add e2e testing
-- [ ] add auth
-- [ ] use context in the ui
+As I said above, the goal moving forward is to increase the complexity of the application and see how it holds up. In the issues tab, there are two milestones, 'production codebase features' + 'application features'. This is where i'm tracking the new features I want to add to the application. Suggestions always welcome.
 
 ## Usage
 
