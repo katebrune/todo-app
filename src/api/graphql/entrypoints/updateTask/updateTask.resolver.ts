@@ -1,10 +1,12 @@
 import { Args, Mutation, Resolver } from '@nestjs/graphql';
-import { Injectable } from '@nestjs/common';
+import { Injectable, UseGuards, Scope } from '@nestjs/common';
 import { TaskEntityService } from '../../../tables/tasks/tasks.service';
 import { Task } from '../../../../shared/types/graphql';
+import { AuthGuard } from '../../../auth/auth.guard';
 
 @Resolver()
-@Injectable()
+@Injectable({ scope: Scope.REQUEST })
+@UseGuards(AuthGuard)
 export class UpdateTaskResolver {
   constructor(private readonly taskService: TaskEntityService) {}
 

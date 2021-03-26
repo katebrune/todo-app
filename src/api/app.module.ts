@@ -7,6 +7,7 @@ import { GqlEntrypointsModule } from './graphql/entrypoints/gqlEntrypoints.modul
 import { GqlTypesModule } from './graphql/types/gqlTypes.module';
 import { ConfigurationModule } from './configuration/configuration.module';
 import { PostgresService } from './configuration/postgres.service';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { PostgresService } from './configuration/postgres.service';
       introspection: true,
       playground: true,
     }),
+    AuthModule,
     GqlEntrypointsModule,
     GqlTypesModule,
     ViewModule,

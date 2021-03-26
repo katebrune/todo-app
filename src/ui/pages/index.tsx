@@ -1,10 +1,11 @@
 import React from 'react';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { ApolloClient, InMemoryCache, useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 import { filter } from 'graphql-anywhere';
 import moment from 'moment';
 import styled from 'styled-components';
+import cookies from 'next-cookies';
 import Modal, { ModalProvider } from 'styled-react-modal';
 import { TaskList } from '../components/TaskList/taskList';
 import {
@@ -18,6 +19,7 @@ import {
   NewTaskFormValues,
 } from '../components/NewTaskForm/newTaskForm';
 import { ADD_NEW_TASK } from '../mutations/addNewTask';
+import { getApolloClient } from '../auth/ApolloClientProvider';
 
 interface HomePageProps {
   data: HomePageQuery;
@@ -76,12 +78,12 @@ const Home: NextPage<HomePageProps> = ({ data }) => {
   );
 };
 
-export const getServerSideProps = async () => {
-  const client = new ApolloClient({
-    uri: 'http://localhost:3000/graphql',
-    cache: new InMemoryCache(),
-  });
-
+export const getServerSideProps = async (ctx) => {
+  const { accessToken } = cookies(ctx);
+  const redirectOnError = () =>
+    ctx.res.writeHead(302, { Location: '/login' }).end();
+  if (!accessToken) return redirectOnError();
+  const client = getApolloClient(accessToken);
   const res = await client.query<HomePageQuery>({
     query: HomePageDocument,
   });
