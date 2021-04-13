@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app';
 import { createGlobalStyle } from 'styled-components';
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { AuthProvider } from '../auth/authContext';
+import { ApolloClientProvider } from '../auth/ApolloClientProvider';
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -10,17 +11,14 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-const client = new ApolloClient({
-  uri: 'http://localhost:3000/graphql',
-  cache: new InMemoryCache(),
-});
-
 const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <ApolloProvider client={client}>
-      <GlobalStyles />
-      <Component {...pageProps} />
-    </ApolloProvider>
+    <AuthProvider>
+      <ApolloClientProvider>
+        <GlobalStyles />
+        <Component {...pageProps} />
+      </ApolloClientProvider>
+    </AuthProvider>
   );
 };
 

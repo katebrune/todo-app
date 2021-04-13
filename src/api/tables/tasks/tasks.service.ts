@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { SessionEntity } from '../../../database/entities/session.entity';
 import { TaskEntity } from '../../../database/entities/task.entity';
 
 @Injectable()
@@ -19,11 +20,16 @@ export class TaskEntityService {
     return await this.repo.find();
   }
 
-  public async add(name: string, description: string): Promise<TaskEntity> {
+  public async add(
+    name: string,
+    description: string,
+    session: SessionEntity,
+  ): Promise<TaskEntity> {
     return this.repo.save({
       name: name,
       description: description,
       status: 'TODO',
+      session: session,
     });
   }
 
