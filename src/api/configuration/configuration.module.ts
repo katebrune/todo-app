@@ -1,12 +1,13 @@
-import { Module, Post } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { configuration } from './configuration';
 import { PostgresService } from './postgres.service';
-
+import { databaseConfig, databaseConfigValidation } from './database.config';
+import { appConfig, appConfigValidation } from './app.config';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      load: [configuration],
+      load: [appConfig, databaseConfig],
+      validationSchema: appConfigValidation.concat(databaseConfigValidation),
     }),
   ],
   exports: [ConfigService, PostgresService],

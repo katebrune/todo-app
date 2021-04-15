@@ -9,11 +9,11 @@ export class PostgresService {
   get config(): TypeOrmModuleOptions {
     return {
       type: 'postgres',
-      host: this.configService.get('postgresHost'),
-      port: this.configService.get('postgresPort'),
-      username: this.configService.get('postgresUser'),
-      password: this.configService.get('postgresPassword'),
-      database: this.configService.get('postgresDatabase'),
+      host: this.configService.get('database.host'),
+      port: this.configService.get('database.port'),
+      username: this.configService.get('database.user'),
+      password: this.configService.get('database.password'),
+      database: this.configService.get('database.name'),
       entities: ['dist/database/entities/*.entity.js'],
       migrationsTableName: 'migrations',
       migrations: ['dist/database/migrations/*.js'],
