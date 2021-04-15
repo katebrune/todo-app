@@ -7,7 +7,7 @@ function definitionsFactory(watch: boolean) {
 
   graphQLDefinnitionsFactory.generate({
     typePaths: ['./src/**/**/**/**/*.graphql'],
-    path: './src/shared/types/graphql.ts',
+    path: './src/api/types/graphql.ts',
     outputAs: 'interface',
     watch: watch,
     emitTypenameField: true,

@@ -1,5 +1,5 @@
 import { Resolver, ResolveField } from '@nestjs/graphql';
-import { Task } from '../../../../shared/types/graphql';
+import { Task } from '../../../types/graphql';
 
 @Resolver('Task')
 export class TaskResolver {

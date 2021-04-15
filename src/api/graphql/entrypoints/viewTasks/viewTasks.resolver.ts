@@ -1,6 +1,6 @@
 import { Args, Query, Resolver } from '@nestjs/graphql';
 import { Injectable, UseGuards, Scope } from '@nestjs/common';
-import { Task } from '../../../../shared/types/graphql';
+import { Task } from '../../../types/graphql';
 import { TaskEntityService } from '../../../tables/tasks/tasks.service';
 import { AuthGuard } from '../../../auth/auth.guard';
 import { CurrentSessionService } from '../../../auth/currentSession.service';
