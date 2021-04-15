@@ -20,7 +20,7 @@ import { AuthModule } from './auth/auth.module';
     GraphQLModule.forRoot({
       typePaths: ['./**/**/**/**/*.graphql'],
       definitions: {
-        path: join(process.cwd(), 'src/shared/types/graphql.ts'),
+        path: join(process.cwd(), 'src/api/types/graphql.ts'),
       },
       introspection: true,
       playground: true,

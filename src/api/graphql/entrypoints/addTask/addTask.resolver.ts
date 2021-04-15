@@ -1,7 +1,7 @@
 import { Args, Resolver, Mutation } from '@nestjs/graphql';
 import { Injectable, Scope, UseGuards } from '@nestjs/common';
 import { TaskEntityService } from '../../../tables/tasks/tasks.service';
-import { Task } from '../../../../shared/types/graphql';
+import { Task } from '../../../types/graphql';
 import { AuthGuard } from '../../../auth/auth.guard';
 import { CurrentSessionService } from '../../../auth/currentSession.service';
 
